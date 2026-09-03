@@ -52,4 +52,23 @@ window.createConfetti = function (canvas) {
     animationId = requestAnimationFrame(frame);
   }
 
-  
+  function start() {
+    stop();
+    const box = resize();
+    pieces = Array.from({ length: 110 }, (_, index) => makePiece(box.width, index < 50));
+    lastTime = performance.now();
+    animationId = requestAnimationFrame(frame);
+    stopTimer = window.setTimeout(stop, 4000);
+  }
+
+  function stop() {
+    if (animationId) cancelAnimationFrame(animationId);
+    if (stopTimer) window.clearTimeout(stopTimer);
+    animationId = 0;
+    stopTimer = 0;
+    pieces = [];
+    context.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  return { start, stop };
+};
