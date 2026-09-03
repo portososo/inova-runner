@@ -281,6 +281,15 @@
     distance=Math.min(CONFIG.finish,distance+CONFIG.speed*dt/CONFIG.pixelsPerMeter);
     const hitbox=playerRect();
     for(const obstacle of obstacles) {
+      const speedMultiplier = keys.has("ArrowRight")
+  ? CONFIG.speedBoost
+  : 1;
+
+distance = Math.min(
+  CONFIG.finish,
+  distance + CONFIG.speed * speedMultiplier * dt / CONFIG.pixelsPerMeter
+);
+
       if(!obstacle.passed && invulnerable<=0 && intersects(hitbox,obstacleRect(obstacle))) {
         openQuestion(obstacle);
         break;
