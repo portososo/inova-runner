@@ -1,0 +1,92 @@
+INOVA RUNNER
+============
+
+PARA JOGAR
+Extraia o ZIP inteiro e abra index.html no navegador.
+Funciona offline. Não precisa de instalação ou servidor.
+
+ORGANIZAÇÃO
+index.html           Telas, botões e diálogos.
+css/estilo.css       Cores, layout e adaptação para celular.
+js/configuracao.js   Velocidade, gravidade, salto e distância final.
+js/perguntas.js      20 perguntas fáceis, alternativas e explicações.
+js/imagens.js        JPEGs originais incorporados para carregar offline.
+js/poses.js          Novas poses ajoelhadas incorporadas para a rolagem.
+js/personagens.js    Recorte dos três quadros e carregamento dos bonecos.
+js/cenario.js        Cidade digital, paralaxe, obstáculos e animações.
+js/jogo.js           Partida, perguntas, controles, física e colisões.
+assets/              Suas imagens originais de BIN e Marcio.
+
+Os scripts são carregados na ordem indicada no HTML, com defer.
+Usamos scripts comuns para permitir abrir o HTML direto, sem servidor.
+Os arquivos de configuração e perguntas fornecem os dados; personagens
+prepara as imagens; cenário só desenha; jogo controla as regras e as telas.
+
+O QUE EDITAR
+- Perguntas: js/perguntas.js. São cinco de cada tema: machine learning,
+  deep learning, visão computacional e aplicações da IA.
+- Cada pergunta possui category (tema), q (enunciado), a (4 alternativas),
+  correct (0 = A, 1 = B, 2 = C, 3 = D) e why (explicação curta).
+- As perguntas são embaralhadas no começo de cada partida.
+- Cores e layout: css/estilo.css. Roxo #8A4FFF é a cor principal;
+  #273043 e #FFFFFF são as cores de apoio.
+- Cores desenhadas no canvas: js/cenario.js.
+- Física e dificuldade: js/configuracao.js.
+- Obstáculos: função start em js/jogo.js.
+- Imagens: js/imagens.js contém cópias Base64 dos arquivos em assets/.
+  Se trocar um JPEG, atualize também sua cópia incorporada e os recortes
+  em js/personagens.js, caso as dimensões mudem.
+
+CONTROLES E REGRAS
+↑ pula; ↓ rola por 0,7 segundo; ← e → movem; Esc pausa.
+Os botões abaixo do cenário também funcionam por toque.
+Pule os blocos e role sob as barras com seta para baixo.
+Uma colisão pausa a corrida e abre uma pergunta obrigatória.
+Ao acertar, clique em Continuar corrida; você ganha 2,4 s de proteção.
+Ao errar, veja a resposta correta e escolha reiniciar ou voltar ao início.
+Ao terminar os 600 metros, aparece a tela de parabéns.
+Sair da aba pausa a partida. Recarregar a página reinicia tudo.
+
+PERSONAGENS
+As cores originais de BIN e Marcio foram preservadas.
+As três poses são recortadas em memória; os JPEGs não são alterados.
+A primeira pose aparece no retrato e no salto; as outras animam a corrida.
+BIN e Marcio receberam novas poses ajoelhadas específicas para a rolagem.
+As poses foram criadas com edição de imagem e usam fundo transparente.
+
+TECNOLOGIA
+HTML + CSS + JavaScript puro, sem bibliotecas externas.
+JavaScript é diferente de Java e roda diretamente no navegador.
+Use um navegador atualizado que suporte canvas e dialog.
+
+VERSÃO EM UM ARQUIVO
+INOVA-RUNNER.html reúne o mesmo jogo em um único arquivo para jogar.
+Para editar com facilidade, use esta pasta, com o código separado.
+
+ATUALIZAÇÕES DESTA VERSÃO
+A imagem fundo-home.png aparece apenas na home, com 50% de opacidade.
+O cenário tem gradiente noturno, cidade em paralaxe, partículas e linhas de dados.
+Os obstáculos são blocos de dados, chips e scanners elevados.
+O salto usa impulso -835 e gravidade 1650, ficando aproximadamente 27%
+mais longo que na versão anterior. Obstáculos aparecem a cada 38 metros.
+
+ATUALIZAÇÕES DESTA VERSÃO
+A imagem fundo-home.png aparece apenas na home, com 50% de opacidade.
+O cenário tem gradiente noturno, cidade em paralaxe, partículas e linhas de dados.
+Os obstáculos são blocos de dados, chips e scanners elevados.
+O salto usa impulso -835 e gravidade 1650, ficando aproximadamente 27%
+mais longo que na versão anterior. Obstáculos aparecem a cada 38 metros.
+
+VERSÃO 6
+A marca no cabeçalho usa assets/logo-inovaai.png.
+Os obstáculos não exibem os nomes internos usados no código.
+A pose ajoelhada gira 360 graus durante a rolagem.
+A vitória inicia confetes em js/confetes.js.
+As 20 perguntas foram reescritas com base em https://edutec-sena-inovaai.vercel.app/.
+
+VERSÃO 6
+A marca no cabeçalho usa assets/logo-inovaai.png.
+Os obstáculos não exibem os nomes internos usados no código.
+A pose ajoelhada gira 360 graus durante a rolagem.
+A vitória inicia confetes em js/confetes.js.
+As 20 perguntas foram reescritas com base em https://edutec-sena-inovaai.vercel.app/.
