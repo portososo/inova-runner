@@ -5,7 +5,7 @@ window.RUNNER_CONFIG = Object.freeze({
   ground: 418,           // Altura do chão.
   finish: 600,           // Distância para vencer.
   pixelsPerMeter: 36,
-  speed: 100,
+  speed: 225,
   speedBoost: 1.25,
   gravity: 1650,
   jumpVelocity: -835,    // Mais negativo = salto mais alto.
