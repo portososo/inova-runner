@@ -280,8 +280,7 @@
     }
     distance=Math.min(CONFIG.finish,distance+CONFIG.speed*dt/CONFIG.pixelsPerMeter);
     const hitbox=playerRect();
-    for(const obstacle of obstacles) {
-      const speedMultiplier = keys.has("ArrowRight")
+    const speedMultiplier = keys.has("ArrowRight")
   ? CONFIG.speedBoost
   : 1;
 
