@@ -289,15 +289,7 @@ distance = Math.min(
   distance + CONFIG.speed * speedMultiplier * dt / CONFIG.pixelsPerMeter
 );
 
-      if(!obstacle.passed && invulnerable<=0 && intersects(hitbox,obstacleRect(obstacle))) {
-        openQuestion(obstacle);
-        break;
-      }
-    }
-    updateHud();
-    if(invulnerable===0) $("game-status").textContent="Desvie dos obstáculos.";
-    if(state==="running" && distance>=CONFIG.finish)finish(true);
-  }
+     
   // 5. Loop único de atualização e desenho.
   function tick(now) {
     // Limita passos a 1/120 s para colisões consistentes. Uma aba suspensa
@@ -314,4 +306,4 @@ distance = Math.min(
   }
   loadCharacters();
   requestAnimationFrame(tick);
-})();
+} )();
